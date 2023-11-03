@@ -60,7 +60,7 @@ def build(args):
     service_name = data.get("service_name")
     service_desc = data.get("service_desc", service_name)
     workdir = data.get("workdir", "./")
-    command = data.get("command").replace("\n","\\")
+    command = data.get("command").replace("\n"," && ")
     restart = data.get("restart", False)
 
     if (service_name == None) or (command == None):
