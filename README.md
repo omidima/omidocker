@@ -1,9 +1,18 @@
 # omidocker
 a application service manager for linux servers same docker but simplify.
 
+ in iran internet speed is a very slow and a large of resource get 403 error for development, so iranian developers cant use early docker on the vps on iran local. this package help to us for service managment easyly and faster on yout vps.
+
+* [Getting start](#getting-start)
+    * [Installing](#installing)
+    * [Config for project](#config-for-project)
+        * [Fields description](#fields-description)
+        * [Examples](#full-example-of-omidockeryml)
+* [Command Helper](#command-helper)
+
 # Getting start
 
-## installing
+## Installing
 first you should get install.sh file from repository or etc resource and get execute access to this file.
 - get file: `wget https://raw.githubusercontent.com/omidima/omidocker/main/install.sh`
 - get executable access: `sudo chmod +x install.sh`
@@ -28,7 +37,7 @@ command: <commands for install and rin your application>
 restart: <boolean>
 ```
 
-### fields description:
+### Fields description:
 - **service_name**: <required>
     every services in your system have a name for know system how od service and can managment your service.
 - **command**: <required> like a CMD in dockerfile & commands in docker-compose
