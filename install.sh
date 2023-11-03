@@ -20,6 +20,4 @@ source ~/.bashrc
 source ~/.zshrc 
 source ~/.bash_profile 
 
-source ~/.bashrc 
-source ~/.zshrc 
-source ~/.bash_profile 
+source ~/.bashrc & source ~/.zshrc & source ~/.bash_profile 
