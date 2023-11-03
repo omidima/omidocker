@@ -10,11 +10,15 @@ pip3 install pyyml
 sudo apt-get install curl -y
 
 curl https://raw.githubusercontent.com/omidima/omidocker/main/omidocker.py > omidocker.py
-sudo mv omidocker.py /var/omidocker.py
+sudo mv omidocker.py /tmp/omidocker.py
 
-echo "alias omidocker='python3 /var/omidocker.py'" >> ~/.bashrc 
-echo "alias omidocker='python3 /var/omidocker.py'" >> ~/.zshrc 
-echo "alias omidocker='python3 /var/omidocker.py'" >> ~/.bash_profile 
+echo "alias omidocker='python3 /tmp/omidocker.py'" >> ~/.bashrc 
+echo "alias omidocker='python3 /tmp/omidocker.py'" >> ~/.zshrc 
+echo "alias omidocker='python3 /tmp/omidocker.py'" >> ~/.bash_profile 
+
+source ~/.bashrc 
+source ~/.zshrc 
+source ~/.bash_profile 
 
 source ~/.bashrc 
 source ~/.zshrc 
