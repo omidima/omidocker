@@ -10,6 +10,9 @@ a application service manager for linux servers same docker but simplify.
         * [Examples](#full-example-of-omidockeryml)
 * [Command Helper](#command-helper)
 
+# Requirement:
+* OS: linux based system ( in future available for mac )
+
 # Getting start
 
 ## Installing
@@ -101,3 +104,14 @@ options:
   -h, --help            show this help message and exit
   -f FILE_PATH, --file FILE_PATH    omidocker file path
 ```
+
+# Tasks:
+- [x] Create linux script
+- [ ] Create mac script
+- [x] Config build option
+- [x] Config start option
+- [x] Config stop option
+- [x] Config status option
+- [ ] Create logger for services
+- [ ] Create ls option for get services list
+- [ ] other ...
