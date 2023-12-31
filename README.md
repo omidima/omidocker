@@ -37,6 +37,7 @@ service_name: <name of your service>
 service_desc: <description of your service>
 workdir: <root of your application source code>
 command: <commands for install and rin your application>
+runner: <commands that should before execute commands same: installing dependencies>
 restart: <boolean>
 ```
 
@@ -107,6 +108,8 @@ options:
 
 # Tasks:
 - [x] Create linux script
+- [x] fix zombies proccess bug
+- [x] before script command
 - [ ] Create mac script
 - [x] Config build option
 - [x] Config start option
