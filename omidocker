@@ -77,7 +77,7 @@ def build(args):
     restart = data.get("restart", False)
 
     if (runner != None):
-        os.system(f"${runner.replace("\n"," && ")}")
+        os.system(runner.replace('\n',' && '))
 
     if (service_name == None) or (command == None):
         raise "service_name and command is required."
