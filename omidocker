@@ -50,6 +50,18 @@ def restart_service(service_name:str):
     return os.system(f"systemctl status {service_name}")
 
 
+def start_service(name):
+    return os.system(f"systemctl start {name}.service")
+
+
+def status_service(name):
+    return os.system(f"systemctl status {name}.service")
+
+
+def stop_service(name):
+    return os.system(f"systemctl stop {name}.service")
+
+
 def build(args):
     with open(args.get("file_path") if args.get("file_path") is not None else "./omidocker.yml", "r") as f:
         yaml_content = f.read()
@@ -61,11 +73,17 @@ def build(args):
     service_desc = data.get("service_desc", service_name)
     workdir = data.get("workdir", "./")
     command = data.get("command").replace("\n"," && ")
+    runner = data.get("runner")
     restart = data.get("restart", False)
+
+    if (runner != None):
+        os.system(f"${runner.replace("\n"," && ")}")
 
     if (service_name == None) or (command == None):
         raise "service_name and command is required."
-    
+
+    stop_service(service_name)
+
     create_service(
         service_name=service_name,
         service_desc=service_desc,
@@ -77,18 +95,6 @@ def build(args):
     status = restart_service(service_name=service_name)
 
     print(f"Service: {service_name}\nLocation: {workdir}\n Status:\n",status)
-
-
-def start_service(name):
-    return os.system(f"systemctl start {name}.service")
-
-
-def status_service(name):
-    return os.system(f"systemctl status {name}.service")
-
-
-def stop_service(name):
-    return os.system(f"systemctl stop {name}.service")
 
 
 if __name__ == "__main__":
